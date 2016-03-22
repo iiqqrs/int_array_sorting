@@ -3,9 +3,11 @@
 #include <ctime>
 using namespace std;
 
+//Randomly populates array with size elements for sorting.
+//Called before each sort so array is random
 void populate(int *a, int size){
     for(int i = 0; i < size; i++){
-        *(a + i) = rand() % 101;
+        *(a + i) = rand() % 2147483647;
     }
 }
 
@@ -22,11 +24,9 @@ int main(){
     p = array_to_sort;
     populate(p, input_array_size);
     
-    /*
-    for(int i : array_to_sort){
+    /*for(int i : array_to_sort){
         cout << " " << i <<endl;
-    }
-    */
+    }*/
     
     //Shell Sort test.
     start = clock();
