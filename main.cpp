@@ -34,17 +34,13 @@ int main(){
     shell_sort(p, input_array_size);
     duration = (clock() - start ) / (double) CLOCKS_PER_SEC;
     cout << "It took " << duration << " seconds to shell sort an array of ints of size " << input_array_size << endl;
-
-
-    cout << "Too bad merge sort doesn't work yet" << endl;
-/*
+    
     //Merge Sort test.
     populate(p, input_array_size); //re generate unsorted list
     start = clock();
     merge_sort(p, input_array_size);
     duration = (clock() - start ) / (double) CLOCKS_PER_SEC;
     cout << "It took " << duration << " seconds to merge sort an array of ints of size " << input_array_size << endl;
-*/
 
     //Quick Sort test.
     populate(p, input_array_size); //re generate unsorted list

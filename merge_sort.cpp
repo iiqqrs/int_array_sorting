@@ -1,34 +1,7 @@
 #include <iostream>
 using namespace std;
+
 // Merge sort
-
-void merge(int* left, int l_size, int* right, int r_size, int* a, int size){
-    int i = 0; // left
-    int j = 0; // right
-    int k = 0; // a
-    while((i < l_size) && (j < r_size)){
-        if(*(left + i) <= *(right + j)){
-            *(a + k) = *(left + i);
-            k++;
-            i++;
-        }else{
-            *(a + k) = *(right + j);
-            k++;
-            j++;
-        }
-        while(i < l_size){
-            *(a + k) = *(left + i);
-            k++;
-            i++;
-        }
-        while(j < r_size){
-            *(a + k) = *(right + j);
-            k++;
-            j++;
-        }        
-    }
-}
-
 void merge_sort(int* a, int size){
     if(size < 2){
         return;
@@ -50,14 +23,6 @@ void merge_sort(int* a, int size){
     for(int i = middle; i < size; i++){
         //*(p2right + (i-middle)) = *(a + i);
         right[i-middle] = *(a + i);
-    }
-    
-    for(int i : left){
-        cout << "left: " << i <<endl;
-    }
-    
-    for(int i : right){
-        cout << "right: " << i <<endl;
     }
     
     merge_sort(p2left, middle);
@@ -94,8 +59,33 @@ void merge_sort(int* a, int size){
             j++;
         }        
     }
-    for(int i = 0; i < size; i++){
-        cout << "a-as-is: " << *(a+i) <<endl;
-    }
-    cout << "spacer" << endl;
 }
+
+/*
+void merge(int* left, int l_size, int* right, int r_size, int* a, int size){
+    int i = 0; // left
+    int j = 0; // right
+    int k = 0; // a
+    while((i < l_size) && (j < r_size)){
+        if(*(left + i) <= *(right + j)){
+            *(a + k) = *(left + i);
+            k++;
+            i++;
+        }else{
+            *(a + k) = *(right + j);
+            k++;
+            j++;
+        }
+        while(i < l_size){
+            *(a + k) = *(left + i);
+            k++;
+            i++;
+        }
+        while(j < r_size){
+            *(a + k) = *(right + j);
+            k++;
+            j++;
+        }        
+    }
+}
+*/
